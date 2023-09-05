@@ -75,11 +75,11 @@ public class ProfesorDaoImp implements IProfesorDao {
      * Este método permite listar los profesores disponibles en la tabla
      *
      * @return lista de objetos profesor
-     * @throws repository.MyException
+     * @throws dao.MyException
      */
     @Override
     public List<Profesor> getAllProfesor() throws MyException {
-        LinkedList<Profesor> listaProfes = new LinkedList<Profesor>();
+        LinkedList<Profesor> listaProfes = new LinkedList<>();
         try {
 
             String query = "SELECT  cedulaprofesor as id, nombre, correoElectronico, user "
@@ -88,7 +88,7 @@ public class ProfesorDaoImp implements IProfesorDao {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                Profesor newProfe = new Profesor();
+                Profesor newProfe = new Profesor() {};
                 newProfe.setCedulaProfesor(rs.getInt("id"));
                 newProfe.setNombreCompleto(rs.getString("nombre"));
                 newProfe.setCorreoElectronico(rs.getString("correoElectronico"));

@@ -10,12 +10,12 @@ package model;
  * 
  * @author brayan
  */
-public class Profesor {
+public abstract class Profesor {
     
-    private int cedulaProfesor;
-    private String nombreCompleto;
-    private String correoElectronico;
-    private String userName;
+    protected int cedulaProfesor;
+    protected String nombreCompleto;
+    protected String correoElectronico;
+    protected String userName;
 
     public Profesor(int cedulaProfesor, String nombreCompleto, String correoElectronico, String userName) {
         this.cedulaProfesor = cedulaProfesor;
@@ -37,7 +37,7 @@ public class Profesor {
     }
 
     /**
-     * @param claveProfesor the claveProfesor to set
+     * @param cedulaProfesor
      */
     public void setCedulaProfesor(int cedulaProfesor) {
         this.cedulaProfesor = cedulaProfesor;
